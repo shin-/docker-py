@@ -654,6 +654,8 @@ class ContainerApiMixin(object):
                 network, using the IPv6 protocol. Defaults to ``None``.
             link_local_ips (:py:class:`list`): A list of link-local (IPv4/IPv6)
                 addresses.
+            mac_address (str): The MAC address of this container on the
+                network. Defaults to ``None``.
 
         Returns:
             (dict) An endpoint config.
@@ -663,7 +665,8 @@ class ContainerApiMixin(object):
             >>> endpoint_config = client.create_endpoint_config(
                 aliases=['web', 'app'],
                 links=['app_db'],
-                ipv4_address='132.65.0.123'
+                ipv4_address='132.65.0.123',
+                mac_address='00:00:00:01:01:01'
             )
 
         """
